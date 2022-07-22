@@ -1,3 +1,5 @@
+package JavaFresherDay4.Exercise.QuadraticEquation;
+
 public class QuadraticEquation {
     private double a,b,c;
 

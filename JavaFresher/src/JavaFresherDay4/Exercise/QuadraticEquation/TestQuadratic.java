@@ -1,3 +1,5 @@
+package JavaFresherDay4.Exercise.QuadraticEquation;
+
 import java.util.*;
 
 public class TestQuadratic {

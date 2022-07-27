@@ -1,6 +1,6 @@
 package JavaFresherDay8.Practice.BinarySearchTree;
 
-public abstract class AbstractTree<E> implements Tree<E> {
+abstract class AbstractTree<E> implements Tree<E> {
 
     @Override
     public void inorder(){

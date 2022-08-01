@@ -25,13 +25,22 @@ public class ProductManager {
 
     //xoa san pham theo id
     public void removebyID(int id){
-        int index = 0;
+        /*int index = 0;
         for (int i = 0; i < products.size(); i++){
-                if (products.get(i).getId() == id){
-                    index = i;
-                }
+            if (products.get(i).getId() == id){
+                index = i;
+            }
         }
         products.remove(index);
+         */
+        Product removeProduct = new Product();
+        for (int i = 0; i < products.size(); i++){
+            if (products.get(i).getId() == id){
+                //removeProduct = i;
+                products.remove(products.get(i));
+            }
+        }
+        //products.remove(removeProduct);
     }
 
     //hien thi danh sach san pham

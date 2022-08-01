@@ -13,6 +13,7 @@ public class StudentController {
     public static Scanner scanner = new Scanner(System.in);
     private List<StudentModel> studentModelList = new ArrayList<>();
     private StudentRepo studentRepo;
+    List<String> sameName = new ArrayList<>();
 
     public StudentController() {
         studentRepo = new StudentRepo();
@@ -82,7 +83,6 @@ public class StudentController {
         System.out.println("Input student name: ");
         String name = scanner.nextLine();
         String formatName = "";
-        List<String> sameName = new ArrayList<>();
         if (!sameName.contains(name)){
             sameName.add(name);
             return name;
@@ -96,7 +96,7 @@ public class StudentController {
                 }
             }
             for (int i = 0; i < index.size(); i++) {
-                studentModelList.get(index.get(i)).setName(name + (char) (alphabet + count));
+                studentModelList.get(index.get(i)).setName(name + " " + (char) (alphabet + count));
                 count++;
             }
             formatName = name + (char) (alphabet + count);

@@ -48,11 +48,12 @@ public class TestStudentManager {
                     studentManager.delete(studentId2);
                     break;
                 case "4":
-                    //printStudent(studentManager);
-                    //printStudent(studentManager.sortStudentByAge());
+                    studentManager.sortStudentByAge();
+                    printStudent(studentManager);
                     break;
                 case "5":
-                    //sstudentManager.sortStudentByName();
+                    studentManager.sortStudentByName();
+                    printStudent(studentManager);
                     break;
                 case "6":
                     studentManager.inputGradeList();

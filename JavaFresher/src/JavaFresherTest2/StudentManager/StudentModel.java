@@ -3,7 +3,7 @@ package JavaFresherTest2.StudentManager;
 import java.util.Date;
 
 public class StudentModel {
-    private int ID = 0;
+    private static int ID = 0;
     private String name;
     private String formatID;
     private Date birthDay;
@@ -53,10 +53,12 @@ public class StudentModel {
         this.birthDay = birthDay;
     }
 
+
     @Override
     public String toString() {
         return "StudentModel{" +
                 "name='" + name + '\'' +
+                ", formatID='" + formatID + '\'' +
                 ", birthDay=" + birthDay +
                 '}';
     }

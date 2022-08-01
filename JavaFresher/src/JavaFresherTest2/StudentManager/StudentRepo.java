@@ -11,10 +11,10 @@ public class StudentRepo {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
-            fos = new FileOutputStream(new File(STUDENT_FILE_NAME));
+            fos = new FileOutputStream(STUDENT_FILE_NAME);
             oos = new ObjectOutputStream(fos);
             for (StudentModel student : studentModelList){
-                oos.writeObject(student.getName() + student.getGrade());
+                oos.writeObject(student.getName() + " " + student.getGrade());
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -26,15 +26,20 @@ public class StudentRepo {
         }
     }
 
-    private void closeStream(InputStream is) {
-        if (is != null) {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+    public void writeFile(List<StudentModel> studentModelList){
+        try {
+            FileWriter writer = new FileWriter(STUDENT_FILE_NAME, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+            for (StudentModel studentModel : studentModelList){
+                bufferedWriter.write(studentModel.getName() + " " +  studentModel.getGrade());
+                bufferedWriter.write("\n");
             }
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
+
 
     private void closeStream(OutputStream os) {
         if (os != null) {

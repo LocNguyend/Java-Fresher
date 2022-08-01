@@ -61,7 +61,7 @@ public class StudentController {
             System.out.printf("Input grade of student id = %s", studentModelList.get(i).getFormatID());
             studentModelList.get(i).setGrade(inputGrade());
         }
-        studentRepo.write(studentModelList);
+        studentRepo.writeFile(studentModelList);
     }
 
     private float inputGrade(){
@@ -78,9 +78,10 @@ public class StudentController {
     }
 
     private String inputName(){
-        String alphabet = "ABCDEFGHIJKLMN";
+        char alphabet = 'A';
         System.out.println("Input student name: ");
         String name = scanner.nextLine();
+        String formatName = "";
         List<String> sameName = new ArrayList<>();
         if (!sameName.contains(name)){
             sameName.add(name);
@@ -89,19 +90,18 @@ public class StudentController {
         else {
             int count = 0;
             List<Integer> index = new ArrayList<>();
-            for (int i = 0; i < studentModelList.size(); i++){
-                if(studentModelList.get(i).getName().equalsIgnoreCase(name)){
+            for (int i = 0; i < studentModelList.size(); i++) {
+                if (studentModelList.get(i).getName().equalsIgnoreCase(name)) {
                     index.add(i);
                 }
             }
-            for (int i = 0; i<index.size();i++){
-                studentModelList.get(i).setName(name + alphabet.charAt(count));
-                count ++ ;
+            for (int i = 0; i < index.size(); i++) {
+                studentModelList.get(index.get(i)).setName(name + (char) (alphabet + count));
+                count++;
             }
-            return name + alphabet.charAt(count);
+            formatName = name + (char) (alphabet + count);
+            return formatName;
         }
-
-        //return scanner.nextLine();
     }
 
     private Date inputBirthDay() {

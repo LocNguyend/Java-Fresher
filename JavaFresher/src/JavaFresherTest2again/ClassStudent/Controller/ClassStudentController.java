@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
 
+import static java.util.Calendar.YEAR;
+
 public class ClassStudentController {
     public static Scanner scanner = new Scanner(System.in);
     List<Student> studentList = new ArrayList<>();
@@ -81,7 +83,10 @@ public class ClassStudentController {
     public List<Student> searchStudentByYear(int year){
         List<Student> students = new ArrayList<>();
         for (int i = 0; i < studentList.size(); i++){
-            if (studentList.get(i).getDayOfBirth().getYear() == year){
+            Calendar cL = Calendar.getInstance();
+            cL.setTime(studentList.get(i).getDayOfBirth());
+            int yearB = cL.get(YEAR);
+            if (yearB == year){
                 students.add(studentList.get(i));
             }
         }

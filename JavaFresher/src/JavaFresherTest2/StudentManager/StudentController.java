@@ -82,7 +82,6 @@ public class StudentController {
         char alphabet = 'A';
         System.out.println("Input student name: ");
         String name = scanner.nextLine();
-        String formatName = "";
         if (!sameName.contains(name)){
             sameName.add(name);
             return name;
@@ -99,8 +98,7 @@ public class StudentController {
                 studentModelList.get(index.get(i)).setName(name + " " + (char) (alphabet + count));
                 count++;
             }
-            formatName = name + (char) (alphabet + count);
-            return formatName;
+            return name + " " + (char) (alphabet + count);
         }
     }
 

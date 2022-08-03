@@ -4,7 +4,6 @@ import java.util.List;
 
 public class ClassStudent {
     private int IDclass ;
-
     private String nameClass;
     private String headTeacher;
 

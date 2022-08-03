@@ -43,7 +43,7 @@ public class TestClassStudent {
                     case "1":
                         System.out.println("Input id of class: ");
                         int id = scanner.nextInt();
-                        studentManager.addStudent(studentManager.allClassStudent().get(id));
+                        studentManager.addStudent(studentManager.allClassStudent().get(id-1));
                         break;
                     case "2":
                         System.out.println("Input id of class: ");

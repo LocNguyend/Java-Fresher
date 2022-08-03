@@ -27,6 +27,10 @@ public class ProductController {
         //productRepo.writeToFile(view.getWriteFile(), products);
     }
 
+    public List<Product> allProduct(){
+        return products;
+    }
+
     private String inputDescription() {
         System.out.println("Input des: ");
         return scanner.nextLine();

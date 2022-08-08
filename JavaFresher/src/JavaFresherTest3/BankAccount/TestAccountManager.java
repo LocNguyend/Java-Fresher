@@ -37,7 +37,7 @@ public class TestAccountManager {
                 case "5":
                     System.out.println("Input ID name: ");
                     String accountName = scanner.nextLine();
-                    accountController.findByName(accountName);
+                    System.out.println(accountController.findByName(accountName));
                     break;
                 case "6":
                     accountController.sortAccountByName();

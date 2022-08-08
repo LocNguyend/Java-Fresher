@@ -119,8 +119,19 @@ public class AccountController {
             double currnet = account.getAmount();
             currnet = currnet - amountWithdraw;
             account.setAmount(currnet);
+            accountDao.writeFile(accountList);
             //addWithdrawHistories(account);
         }
+    }
+
+    public void transfer(Account account){
+        addTransferHistories(account);
+        double amountWithdraw = account.getAccountHistories().get(accountHistories.size()-1).getAmount();
+        double currnet = account.getAmount();
+        currnet = currnet + amountWithdraw;
+        account.setAmount(currnet);
+        accountDao.writeFile(accountList);
+        //addWithdrawHistories(account);
     }
 
     public void addWithdrawHistories(Account account){
@@ -128,6 +139,23 @@ public class AccountController {
         double amount = inputAmountWithdraw();
         int accountID = account.getID();
         Boolean isDesc = false;
+        scanner.nextLine();
+        String des = inputDescription();
+        AccountHistory accountHistory = new AccountHistory(id,des,isDesc,amount,accountID);
+        accountHistories.add(accountHistory);
+        for (int i = 0; i< accountList.size();i++){
+            if (accountList.get(i).getID() == account.getID()){
+                accountList.get(i).setAccountHistories(accountHistories);
+            }
+        }
+        accountDao.writeFile(accountList);
+    }
+
+    public void addTransferHistories(Account account){
+        int id = (accountHistories.size() > 0) ? (accountHistories.size() + 1) : 1;
+        double amount = inputAmountTransfer();
+        int accountID = account.getID();
+        Boolean isDesc = true;
         scanner.nextLine();
         String des = inputDescription();
         AccountHistory accountHistory = new AccountHistory(id,des,isDesc,amount,accountID);
@@ -163,6 +191,11 @@ public class AccountController {
 
     public double inputAmountWithdraw(){
         System.out.println("Input amount withdraw: ");
+        return scanner.nextDouble();
+    }
+
+    public double inputAmountTransfer(){
+        System.out.println("Input amount transfer: ");
         return scanner.nextDouble();
     }
 

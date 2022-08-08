@@ -55,6 +55,18 @@ public class TestAccountManager {
                     accountController.withdraw(account);
                     System.out.println(account.getAccountHistories().toString());
                     break;
+                case "8":
+                    Account account1 = new Account();
+                    System.out.println("Input ID account to transfer: ");
+                    accountID = scanner.nextInt();
+                    for (int i = 0; i < accountController.getAccountList().size(); i++){
+                        if (accountController.getAccountList().get(i).getID() == accountID){
+                            account1 = accountController.getAccountList().get(i);
+                        }
+                    }
+                    accountController.transfer(account1);
+                    System.out.println(account1.getAccountHistories().toString());
+                    break;
                 case "0":
                     System.out.println("exited!");
                     exit = true;
@@ -80,6 +92,7 @@ public class TestAccountManager {
         System.out.println("5. Find account by name.");
         System.out.println("6. Sort account by name.");
         System.out.println("7. Withdraw money.");
+        System.out.println("8. Transfer money.");
         System.out.println("0. exit.");
         System.out.println("---------------------------");
         System.out.print("Please choose: ");

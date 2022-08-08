@@ -20,7 +20,6 @@ public class TestAccountManager {
             switch (choose) {
                 case "1":
                     accountController.addAccount();
-                    System.out.println();
                     break;
                 case "3":
                     System.out.println("Input ID account edit: ");
@@ -68,6 +67,7 @@ public class TestAccountManager {
             }
             // show menu
             showMenu();
+            System.out.println();
         }
     }
 

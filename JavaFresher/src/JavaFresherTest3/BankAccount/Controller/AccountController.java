@@ -31,8 +31,10 @@ public class AccountController {
         //int id = (accountList.size() > 0) ? (accountList.size() + 1) : 1;
         //System.out.println("Account ID = " + id);
         String nameAccount = inputNameAccount();
+        scanner.nextLine();
         double amount = inputAccountAmount();
         int accountNumber = inputAccountNumber();
+        System.out.println();
         Account account = new Account(nameAccount,amount,accountNumber);
         accountList.add(account);
         accountDao.writeFile(accountList);
@@ -139,8 +141,8 @@ public class AccountController {
 
     public String inputNameAccount(){
         System.out.println("Input fullname of account: ");
-        System.out.println();
-        return scanner.nextLine();
+        String name = scanner.nextLine();
+        return name;
     }
 
     public double inputAccountAmount(){

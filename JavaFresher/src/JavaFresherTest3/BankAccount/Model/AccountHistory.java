@@ -9,7 +9,7 @@ public class AccountHistory implements Serializable {
     private double amount;
     private int accountID;
 
-    private Boolean isDesc;
+    private Boolean isDesc = false;
 
     public AccountHistory(int ID, String description, Boolean isDesc, double amount, int accountID) {
         this.ID = ID;
@@ -80,7 +80,6 @@ public class AccountHistory implements Serializable {
                 ", type='" + type + '\'' +
                 ", amount=" + amount +
                 ", accountID=" + accountID +
-                ", isDesc=" + isDesc +
                 '}' + "\n";
     }
 }

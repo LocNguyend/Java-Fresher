@@ -29,9 +29,9 @@ public class AccountController {
 
     public void addAccount() {
         //int id = (accountList.size() > 0) ? (accountList.size() + 1) : 1;
-        //System.out.println("Account ID = " + id);
-        String nameAccount = inputNameAccount();
+        System.out.println("Account ID = " + (accountList.size() + 1));
         scanner.nextLine();
+        String nameAccount = inputNameAccount();
         double amount = inputAccountAmount();
         int accountNumber = inputAccountNumber();
         System.out.println();
@@ -140,7 +140,7 @@ public class AccountController {
     }
 
     public String inputNameAccount(){
-        System.out.println("Input fullname of account: ");
+        System.out.print("Input fullname of account: ");
         String name = scanner.nextLine();
         return name;
     }
@@ -156,8 +156,7 @@ public class AccountController {
     }
 
     public String inputDescription(){
-        System.out.println("Input description for account history: ");
-        System.out.println();
+        System.out.print("Input description for account history: ");
         return scanner.nextLine();
     }
 

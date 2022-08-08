@@ -53,6 +53,7 @@ public class TestAccountManager {
                         }
                     }
                     accountController.withdraw(account);
+                    account.getAccountHistories().toString();
                     break;
                 case "0":
                     System.out.println("exited!");

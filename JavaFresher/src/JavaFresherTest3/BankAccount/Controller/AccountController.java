@@ -128,6 +128,7 @@ public class AccountController {
         double amount = inputAmountWithdraw();
         int accountID = account.getID();
         Boolean isDesc = false;
+        scanner.nextLine();
         String des = inputDescription();
         AccountHistory accountHistory = new AccountHistory(id,des,isDesc,amount,accountID);
         accountHistories.add(accountHistory);

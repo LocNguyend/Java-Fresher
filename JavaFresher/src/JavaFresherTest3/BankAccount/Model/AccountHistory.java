@@ -14,7 +14,7 @@ public class AccountHistory implements Serializable {
     public AccountHistory(int ID, String description, Boolean isDesc, double amount, int accountID) {
         this.ID = ID;
         this.description = description;
-        if (isDesc){
+        if (!isDesc){
             this.type = "Giảm";
         }
         else {
@@ -81,6 +81,6 @@ public class AccountHistory implements Serializable {
                 ", amount=" + amount +
                 ", accountID=" + accountID +
                 ", isDesc=" + isDesc +
-                '}';
+                '}' + "\n";
     }
 }

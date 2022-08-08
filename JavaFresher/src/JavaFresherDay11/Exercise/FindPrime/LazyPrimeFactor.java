@@ -15,17 +15,12 @@ public class LazyPrimeFactor implements Runnable{
     @Override
     public void run() {
         int count = 0;
-        try{
-        while (true){
+        while (true) {
             if (isPrime(count)) {
                 System.out.print("Lazy: " + count);
                 System.out.println();
             }
             count++;
-            Thread.sleep(100);
-            }
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-            }
+        }
         }
     }

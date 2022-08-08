@@ -14,17 +14,13 @@ public class OptimPrimeFactor implements Runnable {
     @Override
     public void run() {
         int count = 0;
-        try{
             while (true){
                 if (isPrime(count)) {
                     System.out.print("Optim: " + count);
                     System.out.println();
                 }
                 count++;
-                Thread.sleep(100);
+                //Thread.sleep(100);
             }
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

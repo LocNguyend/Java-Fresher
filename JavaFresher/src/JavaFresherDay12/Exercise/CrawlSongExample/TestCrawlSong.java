@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class TestCrawlSong {
     public static void main(String[] args) {
         try{
-            URL url = new URL("https://www.nhaccuatui.com/bai-hat/nhac-tre-moi.html");
+            URL url = new URL("https://tienphong.vn/xa-hoi/");
             Scanner scanner = new Scanner(new InputStreamReader(url.openStream()));
             scanner.useDelimiter("\\Z");
             String content = scanner.next();
@@ -17,7 +17,7 @@ public class TestCrawlSong {
 
             content = content.replaceAll("\\n+","");
 
-            Pattern p = Pattern.compile("name_song\">(.*?)</a>");
+            Pattern p = Pattern.compile("title=\"(.*?)\">");
             Matcher m = p.matcher(content);
             while (m.find()) {
                 System.out.println(m.group(1));

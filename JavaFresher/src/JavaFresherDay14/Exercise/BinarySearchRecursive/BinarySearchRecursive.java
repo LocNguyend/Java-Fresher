@@ -7,23 +7,18 @@ public class BinarySearchRecursive {
 
             int mid = l + (r - l) / 2;
 
-            // If the element is present
-            // at the middle itself
+            //neu phan tu o giua
             if (arr[mid] == x)
                 return mid;
 
-            // If element is smaller than mid, then it can
-            // only be present in left subarray
+            // neu phan tu nho hon mid thi no o ben left
             if (arr[mid] > x)
                 return binarySearch(arr, l, mid - 1, x);
 
-            // Else the element can only be present
-            // in right subarray
+            // neu phan tu lon hon mid thi no o right
             return binarySearch(arr, mid + 1, r, x);
         }
 
-        // We reach here when element is not present in
-        // array
         return -1;
     }
 

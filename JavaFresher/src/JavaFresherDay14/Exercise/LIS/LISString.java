@@ -40,7 +40,7 @@ public class LISString {
             LIS.get(i).add(arr.get(i));
         }
 
-        
+
         /*for (int i = 0; i < arr.length; i++) {
             System.out.println("LIS[" + i + "] — " + LIS.get(i));
         }*/
